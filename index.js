@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 
 // import routes
 const authRoutes = require("./src/routes/auth");
+const categoriesRoutes = require("./src/routes/categories");
 
 // middlewares
 app.use(express.json());
@@ -16,6 +17,7 @@ app.use(helmet());
 
 // routes
 app.use("/api/auth", authRoutes);
+app.use("/api/categories", categoriesRoutes);
 
 // error handler
 app.use((error, req, res, next) => {
